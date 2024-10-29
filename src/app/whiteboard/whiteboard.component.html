@@ -1,0 +1,25 @@
+<div class="whiteboard-container"
+     (mousedown)="startDrawing($event)"
+     (mousemove)="draw($event)"
+     (mouseup)="stopDrawing()"
+     (mouseleave)="stopDrawing()">
+  <div *ngFor="let point of points" 
+       class="dot" 
+       [style.left.px]="point.x" 
+       [style.top.px]="point.y"
+       [style.background]="point.color"> 
+  </div>
+</div>
+
+<div class="controls">
+  <div class="color-palette">
+    <button *ngFor="let color of colors" 
+            [style.background]="color" 
+            (click)="setColor(color)">
+    </button>
+    <button (click)="toggleEraser()" [style.background]="isEraser ? 'lightgrey' : 'white'">
+      {{ isEraser ? 'Use Pencil' : 'Use Eraser' }}
+    </button>
+  </div>
+  <button (click)="clearBoard()">Clear Board</button>
+</div>

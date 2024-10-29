@@ -1,0 +1,46 @@
+.border-container {
+    position: relative;
+    display: inline-block; /* To fit around the whiteboard */
+    padding: 10px; /* Space for outer border */
+    background: linear-gradient(to right, #d00909, #a8d009, #0913d0, #f39c12); /* Gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
+}
+
+.whiteboard-container {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    border: 4px solid rgb(235, 15, 15); /* Inner border */
+    background-color: whitesmoke; /* Whiteboard background color */
+    overflow: hidden;
+}
+
+.dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+/* Styles for the color palette */
+.color-palette {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 350px;
+}
+
+.color-palette button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 50%; /* Make them circular */
+}
