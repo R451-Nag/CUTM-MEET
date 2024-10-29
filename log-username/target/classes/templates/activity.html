@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Activity Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td {
+            background-color: white;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>User Activity Data</h2>
+    <table>
+        <tr>
+            <th>Email</th>
+            <th>Login Time</th>
+            <th>Logout Time</th>
+        </tr>
+        <tr th:each="activity : ${activities}">
+            <td th:text="${activity.email}"></td>
+            <td th:text="${activity.loginTime}"></td>
+            <td th:text="${activity.logoutTime}"></td>
+        </tr>
+    </table>
+    <button class="back-button"><a href="/home">Back to Home</a></button>
+</body>
+</html>
